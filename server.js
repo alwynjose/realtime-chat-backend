@@ -7,6 +7,8 @@ const io = require("socket.io")(httpServer, {
 
 io.on("connection", (socket) => {
     socket.on("chat", (args) => {
-        socket.broadcasr.emit("chat", args);
+        socket.broadcast.emit("chat", args);
     });
 });
+
+httpServer.listen(3001);
